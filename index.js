@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+
+
 const http = require("http");
 const cors = require("cors");
 const { Server } = require("socket.io");
@@ -26,7 +28,7 @@ io.on("connection", (socket) => {
     socket.on("send_message", (data) => {
       //  console.log(data);
         socket.to(data.room).emit("receive_message", data);
-})
+});
     socket.on("disconnect", () => {
         console.log("User is Disconnected", socket.id);
     });
