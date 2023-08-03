@@ -16,7 +16,7 @@ const io  = new Server(server, {
         methods: ["GET", "POST"],
     },
 });
-
+// console.log(data);
 io.on("connection", (socket) => {
     console.log(`User Connected: ${socket.id}`);
 
